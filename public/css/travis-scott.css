@@ -1,0 +1,236 @@
+@font-face {
+  font-family: "Anisette";
+  src: url("../assets/fonts/fonnts.com-Anisette_Std_Petite.otf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: "Akira Expanded";
+  src: url("../assets/fonts/akira-Expanded-Demo.otf") format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f5f5dc;
+  color: #000;
+  font-family: "Anisette", sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.hero {
+  position: relative;
+  height: 90vh;
+  overflow: hidden;
+  margin-bottom: 4rem;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(30%);
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(245, 245, 220, 1) 100%
+  );
+}
+
+.artist-name {
+  position: absolute;
+  bottom: 5%;
+  left: 3%;
+  font-family: "Akira Expanded", sans-serif;
+  font-size: 5rem;
+  mix-blend-mode: overlay;
+  color: #000;
+  opacity: 0;
+  animation: slideUp 1s ease forwards;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.origin-section {
+  grid-column: 1 / 7;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards 0.5s;
+}
+
+.focus-section {
+  grid-column: 7 / 13;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards 0.7s;
+}
+
+.section-title {
+  font-family: "Akira Expanded", sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: #000;
+}
+
+.section-content {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.albums-section {
+  margin: 4rem 0;
+}
+
+.albums-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.album-embed {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin: 4rem 0;
+}
+
+.gallery-image {
+  width: 100%;
+  aspect-ratio: 16/20;
+  object-fit: cover;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+  transition: transform 0.3s ease;
+}
+
+.gallery-image:hover {
+  transform: scale(1.02);
+}
+
+.back-button {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  font-family: "Akira Expanded", sans-serif;
+  text-decoration: none;
+  color: #000;
+  padding: 1rem;
+  background: rgba(245, 245, 220, 0.8);
+  backdrop-filter: blur(5px);
+  border-radius: 4px;
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  background: rgba(245, 245, 220, 1);
+  transform: translateX(-5px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1024px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .origin-section,
+  .focus-section {
+    grid-column: auto;
+  }
+
+  .artist-name {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 70vh;
+  }
+
+  .artist-name {
+    font-size: 2.5rem;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .hero {
+    height: 50vh;
+  }
+
+  .artist-name {
+    font-size: 2rem;
+  }
+
+  .section-title {
+    font-size: 1.2rem;
+  }
+
+  .section-content {
+    font-size: 1rem;
+  }
+}

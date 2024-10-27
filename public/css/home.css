@@ -148,12 +148,23 @@ body {
 }
 
 @media (max-width: 768px) {
+  .header {
+    height: 130px;
+  }
+
   .card {
     max-width: 450px;
   }
 
   .title {
-    font-size: 2rem;
+    font-size: 2.5rem;
+    margin-top: 35px;
+  }
+
+  .year {
+    font-size: 1.2rem;
+    top: 2.8rem;
+    right: 1.5rem;
   }
 
   .artist-link {
@@ -162,6 +173,10 @@ body {
 }
 
 @media (max-width: 480px) {
+  .header {
+    height: 100px;
+  }
+
   body {
     padding: 1rem;
   }
@@ -171,15 +186,24 @@ body {
   }
 
   .title {
-    font-size: 1.5rem;
-    letter-spacing: 0.1em;
+    font-size: 1.8rem;
+    margin-top: 20px;
   }
 
   .year {
     font-size: 1rem;
+    top: 2.3rem;
+    right: 0.7rem;
   }
 
   .artist-link {
     font-size: 1rem;
+  }
+}
+@media (max-width: 349px) {
+ 
+  .title {
+    font-size: 1.6rem;
+    margin-top: 20px;
   }
 }
