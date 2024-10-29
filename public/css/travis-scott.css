@@ -63,7 +63,7 @@ body {
   mix-blend-mode: overlay;
   color: #000;
   opacity: 0;
-  animation: slideUp 1s ease forwards;
+  animation: slideUp 2s ease forwards;
 }
 
 .content-grid {
@@ -76,13 +76,13 @@ body {
 .origin-section {
   grid-column: 1 / 7;
   opacity: 0;
-  animation: fadeIn 1s ease forwards 0.5s;
+  animation: fadeIn 3s ease forwards 0.8s;
 }
 
 .focus-section {
   grid-column: 7 / 13;
   opacity: 0;
-  animation: fadeIn 1s ease forwards 0.7s;
+  animation: fadeIn 3s ease forwards 0.8s;
 }
 
 .section-title {
@@ -103,6 +103,7 @@ body {
 }
 
 .section-content {
+  text-align: justify;
   font-size: 1.1rem;
   line-height: 1.6;
 }
@@ -135,12 +136,12 @@ body {
   aspect-ratio: 16/20;
   object-fit: cover;
   opacity: 0;
-  animation: fadeIn 1s ease forwards;
-  transition: transform 0.3s ease;
+  animation: fadeIn 5s ease forwards;
+  transition: transform 0.5s ease;
 }
 
 .gallery-image:hover {
-  transform: scale(1.02);
+  transform: scale(1.04);
 }
 
 .back-button {
@@ -160,7 +161,7 @@ body {
 
 .back-button:hover {
   background: rgba(245, 245, 220, 1);
-  transform: translateX(-5px);
+  transform: translateX(-20px);
 }
 
 @keyframes fadeIn {
